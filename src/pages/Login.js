@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import toast from 'react-hot-toast';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,20 +12,20 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      toast.success('Logged in successfully!');
+      alert('Logged in successfully!');
       navigate('/');
     } catch (error) {
-      toast.error(error.message);
+      alert(error.message);
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
       await googleLogin();
-      toast.success('Logged in with Google!');
+      alert('Logged in with Google!');
       navigate('/');
     } catch (error) {
-      toast.error(error.message);
+      alert(error.message);
     }
   };
 

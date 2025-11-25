@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -29,7 +28,6 @@ function App() {
           <Route path="/movies/update/:id" element={<PrivateRoute><UpdateMovie /></PrivateRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Toaster position="top-right" />
       </Router>
     </AuthProvider>
   );
