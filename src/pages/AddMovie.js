@@ -35,7 +35,7 @@ const AddMovie = () => {
         addedBy: user.email
       };
 
-      const response = await fetch('http://localhost:3000/movies', {
+      const response = await fetch('https://movie-server-delta-three.vercel.app/movies', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(movieData)

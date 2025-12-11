@@ -20,7 +20,7 @@ const UpdateMovie = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:3000/movies/${id}`)
+    fetch(`https://movie-server-delta-three.vercel.app/movies/${id}`)
       .then(res => res.json())
       .then(data => setFormData(data));
   }, [id]);
@@ -39,7 +39,7 @@ const UpdateMovie = () => {
         duration: parseInt(formData.duration)
       };
 
-      const response = await fetch(`http://localhost:3000/movies/${id}`, {
+      const response = await fetch(`https://movie-server-delta-three.vercel.app/movies/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(movieData)

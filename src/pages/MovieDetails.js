@@ -10,7 +10,7 @@ const MovieDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/movies/${id}`)
+    fetch(`https://movie-server-delta-three.vercel.app/movies/${id}`)
       .then(res => res.json())
       .then(data => setMovie(data));
   }, [id]);
@@ -18,7 +18,7 @@ const MovieDetails = () => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this movie?')) {
       try {
-        await fetch(`http://localhost:3000/movies/${id}`, {
+        await fetch(`https://movie-server-delta-three.vercel.app/movies/${id}`, {
           method: 'DELETE'
         });
         toast.success('Movie deleted successfully!');

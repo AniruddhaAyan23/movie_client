@@ -6,12 +6,12 @@ const Home = () => {
   const [recentMovies, setRecentMovies] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/movies/top-rated')
+    fetch('https://movie-server-delta-three.vercel.app/movies/top-rated')
       .then(res => res.json())
       .then(data => setTopRatedMovies(data || []))
       .catch(err => console.error('Error fetching top rated:', err));
 
-    fetch('http://localhost:3000/movies/recent')
+    fetch('https://movie-server-delta-three.vercel.app/movies/recent')
       .then(res => res.json())
       .then(data => setRecentMovies(data || []))
       .catch(err => console.error('Error fetching recent:', err));
